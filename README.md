@@ -2,17 +2,31 @@
 
 An AI-powered automated performance tracking platform that helps developers stay consistent and improve their LeetCode problem-solving journey through weekly reports and smart revision plans.
 
-🌟 What It Does
+⚙️ How user can used our applicatioon ?
+
+1. Login with google 
+
+2. complete thier profile for leetotracker dashboard
+   *enter their leetcode username
+   *and notification email on which they want update 
+
+3. they redirect to their personal leetotracker dashboard
+ 
+4. now their work complete and they get their weekly report on their mentioned notification mail
+   with a perfect revision plan and much more which enhance their productivity .
+
+
+🌟 What LeetOtracker Does
 
 LeetCode Tracker AI allows users to:
 
 🔐 Sign in using Google
 
-👤 Enter their LeetCode username & notification email
+👤 Enter their LeetCode username & notification email(on which they want their performance report every week)
 
-📊 Access a personalized performance dashboard
+📊 Access a personalized performance dashboard(every user have their own personal leetotracker dashboard where they can see their leetcode stats)
 
-📩 Receive automated weekly performance reports
+📩 Receive automated weekly performance reports(with problem breakdown , to-do plans , revision plan and more )
 
 🤖 Get AI-generated revision plans based on their activity
 
@@ -20,46 +34,34 @@ The system tracks solved problems, analyzes performance, and sends structured in
 
 🛠️ Tech Stack
 
-Frontend
+Frontend--
 
-Next.js (App Router)
+1.Next.js (App Router)
 
-TypeScript
+2.TypeScript
 
-Tailwind CSS
+3.Tailwind CSS
 
-NextAuth (Google OAuth)
+4.NextAuth (Google OAuth)
 
-Automation & Backend
+& Backend --
 
-n8n (Workflow Automation)
+1.Next js 
 
-Webhooks
+2.Typescript
 
-AI-based report generation
+Automation --
 
-PostgreSQL (used within n8n workflows)
+1.n8n (Workflow Automation)
 
-Database
+2.Webhooks
 
-MongoDB (User data & profiles)
+3.AI-based report generation
 
-⚙️ How It Works
+4.PostgreSQL (used within n8n workflows)
 
-User logs in via Google.
+Database--
 
-Submits LeetCode username & email.
+1.MongoDB (User data & profiles)
+2. postgreSQL for storing leetcode username and notificaton email for n8n
 
-Data is sent to n8n via webhook.
-
-Automated workflow:
-
-Fetches LeetCode stats
-
-Generates AI performance summary
-
-Creates a revision plan
-
-Sends weekly email report
-
-Each user gets their own dedicated dashboard with tracked progress.
