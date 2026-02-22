@@ -3,18 +3,20 @@ https://leetotracker.vercel.app/
 
 An AI-powered automated performance tracking platform that helps developers stay consistent and improve their LeetCode problem-solving journey through weekly reports and smart revision plans.
 
-⚙️ How user can used our applicatioon ?
+⚙️ steps to use ?
 
 1. Login with google 
 
-2. complete thier profile for leetotracker dashboard
+2. complete  profile for leetotracker dashboard
+3. 
    *enter their leetcode username
+   
    *and notification email on which they want update 
 
-3. they redirect to their personal leetotracker dashboard
+5.  redirect to their personal leetotracker dashboard
  
-4. now their work complete and they get their weekly report on their mentioned notification mail
-   with a perfect revision plan and much more which enhance their productivity .
+6. now work complete and you get your weekly report on your mentioned notification mail
+   with a perfect revision plan and much more which enhance your productivity .
 
 
 🌟 What LeetOtracker Does
