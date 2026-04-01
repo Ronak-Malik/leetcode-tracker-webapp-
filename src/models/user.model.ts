@@ -1,55 +1,79 @@
-import mongoose, { Schema, Document, Model } from "mongoose";
+import mongoose from "mongoose";
 
-
-export interface User extends Document {
-  googleId: string;
-  name: string;
+export interface IUser {
+  _id: string;
   email: string;
-
-   isProfileCompleted: boolean;
-
-     leetcodeUsername?: string;   
-  notifyMail?: string;
-
+  password: string;
+  name?: string;
+  leetcodeUsername: string;
+  notifyMail: string;
+  leetcodeStats?: {
+    totalSolved: number;
+    easy: number;
+    medium: number;
+    hard: number;
+    ranking: number;
+    streak: number;
+    lastUpdated: Date;
+    recentProblems: Array<{
+      title: string;
+      titleSlug: string;
+      difficulty: string;
+      solvedAt: Date;
+    }>;
+  };
   createdAt: Date;
   updatedAt: Date;
 }
 
-
-const UserSchema: Schema<User> = new Schema(
+const UserSchema = new mongoose.Schema(
   {
-    googleId: {
-      type: String,
-      required: true,
-    },
-
-    name: {
-      type: String,
-      required: true,
-    },
-
     email: {
       type: String,
-      required: true,
+      required: [true, "Email is required"],
       unique: true,
+      lowercase: true,
+      trim: true,
     },
-    
+    password: {
+      type: String,
+      required: [true, "Password is required"],
+    },
+    name: {
+      type: String,
+      required: false,
+    },
     leetcodeUsername: {
       type: String,
+      required: [true, "LeetCode username is required"],
       unique: true,
-      sparse: true,
+      trim: true,
+      lowercase: true,
     },
-
     notifyMail: {
       type: String,
-      unique : true,
-     
+      required: [true, "Notification email is required"],
+      unique: true,
+      lowercase: true,
+      trim: true,
     },
-
-
-    isProfileCompleted:{
-        type: Boolean,
-       default: false,
+    leetcodeStats: {
+      type: {
+        totalSolved: Number,
+        easy: Number,
+        medium: Number,
+        hard: Number,
+        ranking: Number,
+        streak: Number,
+        lastUpdated: Date,
+        recentProblems: [{
+          title: String,
+          titleSlug: String,
+          difficulty: String,
+          solvedAt: Date,
+        }],
+      },
+      default: null,
     },
   },
   {
@@ -57,8 +81,4 @@ const UserSchema: Schema<User> = new Schema(
   }
 );
 
-
-const UserModel: Model<User> =
-  mongoose.models.User || mongoose.model<User>("User", UserSchema);
-
-export default UserModel;
+export default mongoose.models.User || mongoose.model<IUser>("User", UserSchema);
