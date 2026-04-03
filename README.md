@@ -1,70 +1,80 @@
-🚀 LeetCode Tracker AI
-https://leetotracker.vercel.app/
+🚀 Leet'O Tracker AI
+Leet'O Tracker AI is a full-stack platform that tracks LeetCode activity, analyzes user performance, and delivers automated AI-generated insights to help developers improve consistently.
 
-An AI-powered automated performance tracking platform that helps developers stay consistent and improve their LeetCode problem-solving journey through weekly reports and smart revision plans.
+🌐 Live: https://leetotracker.vercel.app/
 
-⚙️ steps to use ?
+Overview
+Leet'O Tracker automates the entire feedback loop of coding practice:
 
-1. Login with google 
+Collects user problem-solving data
+Stores historical performance
+Analyzes trends using AI
+Generates structured reports
+Sends automated email updates
+Provides an interactive AI mentor
+Key Features
+Personal performance dashboard
+Weekly automated email reports
+AI-generated revision plans
+Interview-style AI mentor
+Workflow-based automation using n8n
+Historical tracking and comparison
+Architecture
+Frontend (Next.js) ↓ MongoDB (User Data) ↓ n8n Workflows (Automation) ↓ PostgreSQL (Reports) ↓ AI Processing (Groq LLM) ↓ Email Reports + AI Mentor (FastAPI)
 
-2. complete  profile for leetotracker dashboard
-3. 
-   *enter their leetcode username
-   
-   *and notification email on which they want update 
+AI Mentor
+Routes queries based on user intent
+Provides interview questions and evaluation
+Generates structured revision plans
+Uses user performance data for context
+Automation (n8n)
+Fetch user data
+Store reports in PostgreSQL
+Compare with previous activity
+Generate AI summaries
+Send email reports
+Tech Stack
+Frontend
 
-5.  redirect to their personal leetotracker dashboard
- 
-6. now work complete and you get your weekly report on your mentioned notification mail
-   with a perfect revision plan and much more which enhance your productivity .
+Next.js
+TypeScript
+Tailwind CSS
+NextAuth
+Backend
 
+FastAPI
+LangGraph
+Groq (LLaMA 3)
+Automation
 
-🌟 What LeetOtracker Does
+n8n
+Database
 
-LeetCode Tracker AI allows users to:
+MongoDB
+PostgreSQL
+How It Works
+User logs in and submits LeetCode username
+Dashboard displays current stats
+n8n workflow runs on schedule
+AI analyzes performance
+User receives automated report via email
+AI mentor provides on-demand guidance
+Running Locally
+Start MongoDB and PostgreSQL
 
-🔐 Sign in using Google
+Run the frontend (Next.js)
 
-👤 Enter their LeetCode username & notification email(on which they want their performance report every week)
+Start FastAPI server (AI mentor)
 
-📊 Access a personalized performance dashboard(every user have their own personal leetotracker dashboard where they can see their leetcode stats)
+Run n8n and import workflow
 
-📩 Receive automated weekly performance reports(with problem breakdown , to-do plans , revision plan and more )
+Configure environment variables:
 
-🤖 Get AI-generated revision plans based on their activity
-
-The system tracks solved problems, analyzes performance, and sends structured insights directly to the user's inbox — fully automated.
-
-🛠️ Tech Stack
-
-Frontend--
-
-1.Next.js (App Router)
-
-2.TypeScript
-
-3.Tailwind CSS
-
-4.NextAuth (Google OAuth)
-
-& Backend --
-
-1.Next js 
-
-2.Typescript
-
-Automation --
-
-1.n8n (Workflow Automation)
-
-2.Webhooks
-
-3.AI-based report generation
-
-4.PostgreSQL (used within n8n workflows)
-
-Database--
-
-1.MongoDB (User data & profiles)
-2. postgreSQL for storing leetcode username and notificaton email for n8n
-
+MONGO_URI
+GROQ_API_KEY
+Email/SMTP credentials
+Authors
+Samrat Chauhan
+Ronak Malik
+Summary
+Leet'O Tracker AI combines tracking, analysis, and automation into a single system that helps developers improve their problem-solving performance without manual effort.
